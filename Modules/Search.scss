@@ -1,0 +1,168 @@
+// Header Search Module
+.search-wrp{
+    display: inline-block;
+    vertical-align: top;
+    .kutuArama{
+        .kutuHeaderArama{
+            .btn.btn-search{
+                padding: 0;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 20px;
+            }
+        }
+        .kutuBodyArama{
+            position: absolute;
+            right: 0;
+            width: 100%;
+            max-width: 50px;
+            top: 30px;
+            background: #000;
+            border-radius: 25px;
+            height: 50px;
+            padding: 0 0;
+            overflow: hidden;
+            z-index: -1;
+            @include transition(all 0.3s ease-in-out);
+            backface-visibility: hidden;
+            .kutuArama_lnkHizliUrun,
+            .kutuArama_kategoriSecim{
+                display: none;
+            }
+            .kutuArama_lbfkutuArama1{
+                display: block !important;
+            }
+            .btn.btn-search-text-remove{
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 14px;
+                @include transition(all 0.2s ease-in-out);
+                @include setTransform(translateX(100%));
+                .search-keyup &{
+                    @include setTransform(translateX(0));
+                }
+            }
+            .btnArama{
+                @extend .btn-black;
+                @extend .btn-radius-full;
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 0;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 20px;
+                &:hover{
+                    background: none;
+                    color: $grey;
+                }
+            }
+            .kutuArama_aramaText{
+                position: relative;
+                width: 100%;
+                input{
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    background: none;
+                    border: none;
+                    color: $colorWhite;
+                    font-family: $fontSiteBold;
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+            }
+            .search-ready &{
+                backface-visibility: hidden;
+                z-index: 1;
+            }
+            .search-animate &{
+                padding: 0 50px;
+                width: 417px;
+                max-width: 75%;
+            }
+            
+        }
+        .kutuFooterArama{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:$deviceMobile){
+    .search-wrp{
+        .kutuArama{
+            .kutuHeaderArama{
+                .btn.btn-search-back{
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 15px;
+                    padding: 0;
+                    margin-right: 20px;
+                    margin-left: -60px;
+                    @include transition(all 0.2s ease-in-out);
+                    .search-ready &{
+                        margin-left: 0;
+                        margin-right: 10px;
+                    }
+                }
+                .btn.btn-search{
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 15px;
+                }
+            }
+            .kutuBodyArama {
+                left: 20px;
+                top: 20px;
+                right: 20px;
+                height: 40px;
+                opacity: 0;
+                .btnArama {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 15px;
+                    
+                }
+                .kutuArama_aramaText{
+                    input {
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                }
+                .btn.btn-search-text-remove {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 10px;
+                }
+                .search-ready &{
+                    left: 70px;
+                    backface-visibility: hidden;
+                    z-index: 1;
+                }
+                .search-animate &{
+                    opacity: 1;
+                    padding: 0 50px;
+                    width: initial;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

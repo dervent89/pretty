@@ -1,0 +1,292 @@
+@-webkit-keyframes btn-add-animate {
+  0%   { width: 0; }
+  99% { width: 100%; }
+  100% {width: 100%; background: #24d0d0;}
+}
+@-moz-keyframes btn-add-animate {
+  0%   { width: 0; }
+  99% { width: 100%; }
+  100% {width: 100%; background: #24d0d0;}
+}
+@-o-keyframes btn-add-animate {
+  0%   { width: 0; }
+  99% { width: 100%; }
+  100% {width: 100%; background: #24d0d0;}
+}
+@keyframes btn-add-animate {
+  0%   { width: 0; }
+  99% { width: 100%; }
+  100% {width: 100%; background: #24d0d0;}
+}
+
+.mini-basket-link > a,
+.ems-prd-btn-detail a,
+a.btnDefault,
+a.btn {
+    position: relative;
+    display: inline-block;
+    padding: 11px 33px;
+    font-family: $fontDefault;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 2px;
+    border:2px solid transparent;
+    transition:background, color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -moz-transition:background, color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -o-transition:background, color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transition:background, color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -ms-transition:background, color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        i + span{
+            margin-left: 10px;
+        }
+
+    @at-root {
+        &-text,
+        a.btnAdresListeGuncelle,
+        a.btnAdresListeSil,
+        a.btnSatisSozlesmeOnizle,
+        a.btnOnBilgilendirmeFormOnizle,
+        a.btnHediyeCekiKullan,
+        a.btnStokHaberciFavori,
+        a.btnFavoriListeSil,
+        a.btnTakipListeFiySil,
+        a.btnTakipListeStokSil {
+            background: none;
+            padding: 0;
+            font-size: inherit;
+            color: inherit;
+            &:hover {
+                background: inherit;
+            }
+        }
+        .mini-basket-link > a,
+        &-full, .pageLogin_btnFacebookLogin > table, a.btnFacebookLogin, a.btnYeniUyeKaydet, a.btnLogin, a.btnUyeBilgi {
+            width: 100%;
+        }
+        .urunDetay_btnSepeteAt > table,
+        .urunListe_favoriEkle > table,
+        .urunDetay_btnStokHaberci > table,
+        .ems-cart-coupon > table,
+        .pageLogin_btnFacebookLoginKutu > table,
+        .pageLogin_btnFacebookLogin > table,
+        .pageLogin_btnUyeSifreGonder > table {
+            display: table !important;
+        }
+        a.btnFacebookLogin {
+            background: #304b92;
+        }
+    }
+}
+
+a.btnDefault,
+.btn{
+    @at-root .mini-basket-link > a,
+    &.btnFatAdrSec.emos_selected,
+    &.btnTesAdrSec.emos_selected,
+    &.btnsepeteAt,
+    &.btnKutuLogin,
+    &.btnLogin,
+    &.btnAdresEkle,
+    &.btnAdresKaydet,
+    &.btnUyeBilgi,
+    &.btnSipariseDon,
+    &.btnSifreGuncelle,
+    &.btnCepDogrulamaKoduGonder,
+    &.btnYeniUyeKaydet,
+    &.btnMesajGonder,
+    &.btnAlisveris,
+    &.btnOdemeBilgiDon,
+    &.btnBultenGonder,
+    &.btnXMLFORM,
+    &.btnUyeSifreGonder,
+    &.btnHvlBnkSec.emos_selected,
+    &.btnUyelikIptalEt,
+    &-black{
+        border-color: $colorDefault;
+        background: $colorDefault;
+        color: $colorWhite;
+            @media screen and (min-width:$deviceMobile){
+                &:hover{
+                    background: $colorWhite;
+                    color: $colorDefault;
+                    border-color: $colorDefault;
+                }
+            }
+    }
+    &.btnsepeteAt{
+        span{
+            position: relative;
+            z-index: 2;
+        }
+        &:after{
+            content:'';
+            display: block;
+            width: 0;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            background: $colorPink;
+            
+        }
+        @media screen and (min-width:$deviceMobile){
+        &:hover{
+            background: $colorPink;
+            color:$colorWhite;
+            border-color: $colorPink;
+        }
+        }
+        &.adding{
+            padding: 24.5px 33px !important;
+            border: 0;
+            background: #000;
+                &:after{
+                    width: 0;
+                    background: #24d0d0;
+                    -webkit-animation: btn-add-animate 0.333s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                    -moz-animation:    btn-add-animate 0.333s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                    -o-animation:      btn-add-animate 0.333s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                    animation:         btn-add-animate 0.333s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                }
+        }
+        &.added{
+            &:after{
+                width: 100%;
+            }
+        }
+        
+    }
+    @at-root .ems-prd-btn-detail a,
+    .btnStokHaberci,
+    &-grey{
+        background: $borderColor;
+        color: $colorDefault;
+            @media screen and (min-width:$deviceMobile){
+                &:hover{
+                    background: lighten($borderColor,10%);
+                    color: $colorDefault;
+                }
+            }
+    }
+    &.btnFavoriSil,
+    &.btnFavSepeteAt,
+    &.btnFavoriListeTumSil,
+    &-light-grey{
+        background: #f0f0f0;
+        color: $colorDefault;
+            @media screen and (min-width:$deviceMobile){
+                &:hover{
+                    background: darken(#f0f0f0,10%);
+                    color: $colorDefault;
+                }
+            }
+    }
+    &.btnIptalTalep,
+    &-pink{
+        background: $colorPink;
+        color:$colorWhite;
+        border-color: $colorWhite;
+            @media screen and (min-width:$deviceMobile){
+                &:hover{
+                    background: darken($colorPink,10%);
+                }
+            }
+    }
+    &.btnAdresIptal,
+    &.btnFatAdrSec,
+    &.btnTesAdrSec,
+    &.btnSepeteAtListe,
+    &.btnHvlBnkSec,
+    &-white{
+        background: $colorWhite;
+        color:$colorDefault;
+        border-color: $colorDefault;
+            @media screen and (min-width:$deviceMobile){
+                &:hover{
+                    background: darken($colorDefault,80%);
+                    color: $colorWhite;
+                }
+            }
+    }
+    &.btnGoogleLoginKutu{
+        background: #f34a38;
+        color: $colorWhite;
+        font-family: $fontDefault;
+        text-align: center;
+        padding:0;
+        height: 50px;
+        line-height: 50px;
+            @media screen and (min-width:$deviceMobile){
+                &:hover{
+                    background: darken(#f34a38,20%);
+                }
+            }
+            i{
+                float: left;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 27px;
+            }
+    }
+    &.btnFacebookLogin,
+    &.btnFacebookLoginKutu{
+        background: #304b92;
+        color: $colorWhite;
+        font-family: $fontDefault;
+        text-align: center;
+        padding:0;
+        height: 50px;
+        line-height: 50px;
+            @media screen and (min-width:$deviceMobile){
+                &:hover{
+                    background: darken(#304b92,20%);
+                }
+            }
+            i{
+                float: left;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 27px;
+            }
+    }   
+    &.btnAdresKaydet,
+    &.btnAdresIptal,
+    &.btnFatAdrSec,
+    &.btnTesAdrSec,
+    &-border{
+        border-style: solid;
+        border-width: 1px;
+    }
+    &-text{
+        background: none;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        @media screen and (min-width:$deviceMobile){
+            &:hover {
+                background: inherit;
+            }
+        }
+    }
+    @at-root .ems-prd-btn-detail a,
+    &.btnFatAdrSec,
+    &.btnTesAdrSec,
+    &.btn-support,
+    &.btnOdemeBilgiDon,
+    &.btnBultenGonder,
+    &.btnSepeteAtListe,
+    &-full{
+        width: 100%;
+    }
+    &-radius{
+        border-radius: 5px;
+        &-full{
+            border-radius: 50%;
+        }
+    }
+}

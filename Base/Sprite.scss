@@ -22,7 +22,7 @@ $icon-pinterest: "\e911";
 $icon-search: "\e912";
 $icon-twitter: "\e913";
 
-[class^="icon-"], [class*=" icon-"], [class^="icon_"]{
+[class^="icon-"], [class*=" icon-"], [class^="icon_"],.icon{
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;

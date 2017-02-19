@@ -2,7 +2,7 @@
 $baseHref: '';
 
 $deviceMobile: 960px;
-$deviceMobileMini: 640px;
+$deviceMobileMini: 360px;
 
 // Typography
 $fontTL: "tl";
@@ -93,6 +93,7 @@ $singleOuter: 1.6rem;
 div[id^="lblBanner"] {
     display: inline-block;
     vertical-align: top;
+    width: 100%;
 }
 
 @media screen and (min-width: $deviceMobile){
@@ -104,6 +105,10 @@ div[id^="lblBanner"] {
 @media screen and (max-width: $deviceMobile){
     .desktop{
         display: none !important;
+    }
+    div[id^="lblBanner"] {
+        max-width: 100%;
+        width: initial;
     }
     
 }

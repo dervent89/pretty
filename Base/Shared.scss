@@ -143,6 +143,9 @@ figure{margin: 0;font-size: 0;}
 
 .ems-container {
     padding:0 15px;
+	@media screen and (max-width:$deviceMobile){
+		padding: 0;
+	}
 }
 
 .page-top-title, .pageHeaderDefault {

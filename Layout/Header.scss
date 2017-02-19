@@ -4,6 +4,8 @@ header{
     display: inline-block;
     vertical-align: top;
     width: 100%;
+    position: relative;
+    z-index: 99;
     .ems-container{
         position: relative;
         height: 120px;
@@ -27,6 +29,7 @@ header{
         left: 50%;
         top: 50%;
         text-align: center;
+        z-index: 2;
         @include setTransform(translate(-50%, -50%));
             .site-logo{
                 font-size: 0;
@@ -39,6 +42,10 @@ header{
         padding-top: 30px;
         padding-left: 130px;
         position: relative;
+        > [id^="lblBanner"]{
+            width: initial;
+            max-width: 100%;
+        }
         .main-menu{
             margin-right: 10px;
         }
@@ -62,7 +69,6 @@ header{
                     padding: 10px 20px;
                     position: relative;
                     overflow: hidden;
-                    background: $colorPink;
                     @include transition(all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55));
                 }
                 .lvl-2{

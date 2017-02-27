@@ -1,0 +1,61 @@
+.kutuKategori {
+    margin-bottom: 50px;
+    .kutuHeaderKategori {display:none;}
+    .kutuBodyKategori{
+        ul.menuKategori{
+            > li{
+                > a{
+                    padding: 0;
+                    color: $colorDefault;
+                    font-family: $fontSite;
+                    font-size: 18px;
+                    letter-spacing: 2px;
+                    line-height: 35px;
+                    display: inline-block;
+                }
+                &.opened{
+                    > a{
+                        font-family: $fontSiteBold;
+                    }
+                    > ul{
+                        display: block;
+                    }
+                }
+                > ul{
+                    display: none;
+                    padding: 10px 0;
+                    > li{
+                        padding-left: 10px;
+                        margin-bottom: 5px;
+                        > a{
+                            padding: 7px 5px;
+                            position: relative;
+                            font-family: $fontSite;
+                            font-size: 14px;
+                            color: $colorDefault;
+                            display: inline-block;
+                            &:before{
+                                content:'';
+                                display: block;
+                                position: absolute;
+                                left: -10px;
+                                width: 6px;
+                                height: 6px;
+                                border-radius: 50%;
+                                top: 50%;
+                                @include setTransform(translateY(-50%));
+                                background: transparent;
+                            }
+                            &.active{
+                                color: $colorPink;
+                                &:before{
+                                    background: $colorPink;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

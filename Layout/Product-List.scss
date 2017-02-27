@@ -1,0 +1,287 @@
+.page-products-list{
+    .left-bar{
+        padding-top: 57px;
+    }
+    .content-bar{
+        padding-top: 25px;
+        .ems-prd-top-banner{
+            margin-top: 25px;
+            font-size: 0;
+        }
+        @media screen and (max-width: $deviceMobile){
+            padding-top: 0;
+            .ems-prd-top-banner{
+                margin-top: 0;
+            }
+        }
+    }
+    
+}
+
+.ems-prd-list {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin-top:40px;
+    > ul {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        > .ems-prd{
+            display:inline-block;
+            vertical-align:top;
+            width:31.33%;
+            margin-right:3%;
+            margin-bottom: 54px;
+            background: $colorWhite;
+            &:nth-child(3n+3){
+                margin-right:0;
+            }
+            @at-root #sonGezilen{
+                .ems-prd {
+                    width: 23.5%;
+                    margin-right: 2%;
+                    &:nth-child(4n+4) {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .ems-prd-inner{
+                border:2px solid #eee;
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 24px 30px 55px ;
+                @include transition(all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000));
+                .ems-prd-code{display: none;}
+                .ems-prd-image{
+                    @include transition(transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1.000));
+                }
+                .ems-prd-text-wrap{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding: 5px 20px 20px 20px;
+                    z-index: 2;
+                    @include transition(all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000));
+                    .ems-prd-color{
+                        display: none;
+                    }
+                    .ems-prd-color-count{
+                        font-family: $fontSite;
+                        font-size: 14px;
+                        color: $darkGrey;
+                        line-height: 16px;
+                        &:after{
+                            content: $langEN_renk;
+                            margin-left: 5px;
+                        }
+                        &:empty{
+                            display: none;
+                        }
+                    }
+                    .ems-prd-name{
+                        font-family: $fontSite;
+                        font-size: 18px;
+                        color: $colorDefault;
+                        line-height: 1;
+                    }
+                }
+                &:hover{
+                    border-color: $colorPink;
+                    .ems-prd-image{
+                        @include setTransform(translateY(-10px));
+                    }
+                    .ems-prd-text-wrap{
+                        @include setTransform(translateY(-10px));
+                    }
+                }
+            }
+            .ems-prd-icons{
+                position: absolute;
+                top: 0;
+                left: 0;
+                .spc{
+                    display: block;
+                    background: $colorPink;
+                    height: 30px;
+                    padding: 6px 10px;
+                    color: $colorWhite;
+                    font-family: $fontSiteBold;
+                    font-size: 15px;
+                    margin-top: 10px;
+                    margin-left: -10px;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    &:before{
+                        content: '';
+                        width: 15px;
+                        height: 15px;
+                        display: block;
+                        position: absolute;
+                        left: -5px;
+                        top: 40px;
+                        @include setTransform(skewX(30deg));
+                        z-index: -1;
+                        background: darken($colorPink, 5%);
+                    }
+                }
+                @at-root .yeniUrun{
+                    .urunListe_yeniUrun {
+                        display: block !important;
+                    }
+                }
+            }
+        }
+    }
+    &-paging-bottom{
+        > .urunPaging{
+            > table{
+                > tbody{
+                    > tr{
+                        > td{
+                            display: block;
+                            width: 100% !important;
+                            text-align: left;
+                            border-bottom: 2px solid #eeeeee;
+                            margin-bottom: 50px;
+                            &:last-child,
+                            &:first-child{
+                                display: none;
+                            }
+                            .urunPaging_pageNavigation{
+                                display: inline-block;
+                                vertical-align: top;
+                                width: 100%;
+                                padding-bottom: 20px;
+                                > span{
+                                    display: block;
+                                    float: left;
+                                    > *{
+                                        font-family: $fontSite;
+                                        font-size:18px;
+                                        letter-spacing: 1.2px;
+                                        color: #898989;
+                                        padding: 3px 6px;
+                                        margin-right: 5px;
+                                        display: inline-block;
+                                    }
+                                    > span{
+                                        color: $colorDefault;
+                                        text-decoration: underline;
+                                    }
+                                }
+                                .tumunuGoster{
+                                    display: block !important;
+                                    float: right;
+                                    font-family: $fontSite;
+                                    font-size: 14px;
+                                    color: $darkGrey;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.ems-prd-bottom-banner{
+    padding: 40px 0 140px 0;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    color: #9b9b9b;
+    font-family: $fontSite;
+    font-size: 18px;
+}
+
+.ems-filter-btn{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: #eeeeee;
+    font-size: 18px;
+    font-family: $fontSite;
+    color: $colorDefault;
+    display: block;
+    margin-bottom: 25px;
+    i{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 50%;
+        background: $colorPink;
+        margin-right: 10px;
+        text-align: center;
+        padding: 6.5px 0;
+        &:before,
+        &:after{
+            content:'';
+            display: block;
+            width: 14px;
+            height: 4px;
+            background: $colorDefault;
+            margin: 2px auto;
+        }
+    }
+    span{
+        display: inline-block;
+        vertical-align: top;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width:$deviceMobile){
+    .ems-prd-list{
+        margin-top: 10px;
+        > ul{
+            > .ems-prd{
+                width: 46%;
+                margin: 2%;
+            }
+        }
+        &-paging-bottom{
+            > .urunPaging{
+                > table{
+                    > tbody{
+                        > tr{
+                            > td{
+                                .urunPaging_pageNavigation{
+                                    text-align: center;
+                                    padding-top: 20px;
+                                    > span{
+                                        float: none;
+                                        display: inline-block;
+                                        vertical-align: top;
+                                    }
+                                    .tumunuGoster{
+                                        display: none !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ems-prd-bottom-banner{
+        padding: 20px 20px 50px 20px;
+    }
+    .ems-filter-btn{
+        margin-top: 10px;
+        margin-bottom: 0;
+        display: inline-block;
+        vertical-align: top;
+        background: none;
+        width: initial;
+        i{
+            float:right;
+            margin-left: 10px;
+        }
+    }
+}

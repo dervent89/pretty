@@ -1,0 +1,193 @@
+.kutuOzellikFiltre{
+    .kutuHeaderOzellikFiltre{
+    }
+    .kutuBodyOzellikFiltre{
+        > table{
+            display: block;
+            width: 100%;
+            height: auto;
+            > tbody,
+            > tbody > tr,
+            > tbody > tr > td,
+            > tbody > tr > th,{
+                display: block;
+                width: auto;
+                width: 100%;
+            }
+        }
+        .urunKiyaslamaOzellik_ozellikAd{
+            font-family: $fontSiteBold;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 1.2px;
+            color: $colorDefault;
+        }
+        .urunKiyaslamaOzellik_ozellikIcerik{
+            margin-bottom: 40px;
+            .urunKiyaslamaOzellik{
+                font-family: $fontSite;
+                font-size: 14px;
+                line-height: 30px;
+                letter-spacing: 1.2px;
+                padding: 7px 10px;
+                position: relative;
+                &:before{
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    left: -10px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    top: 50%;
+                    @include setTransform(translateY(-50%));
+                    background: transparent;
+                }
+                &.active{
+                    color: $colorPink;
+                    &:before{
+                        background: $colorPink;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$deviceMobile){
+  
+    .page-products-list{
+        .left-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            display: none;
+            @include setTransform(translateY(-100%));
+            @include transition(transform 0.36s ease-in-out);
+            background: #fff;
+            max-width: none;
+            height: 100%;
+            overflow: hidden;
+            padding: 80px 0 0 0;
+            .filter-header{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 80px;
+                text-align: center;
+                .title{
+                    font-size: 18px;
+                    font-family: $fontDefaultBold;
+                    letter-spacing: 2px;
+                    line-height: 80px;
+                }
+                a.btn-filter-close{
+                    position: absolute;
+                    right: 20px;
+                    top: 20px;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    display: block;
+                    padding: 7.5px;
+                    font-size: 25px;
+                }
+            }
+            .filter-wrap{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                max-height: calc(100vh - 80px);
+                overflow: auto;
+                    .kutuKategori,
+                    .kutuHeaderOzellikFiltre{
+                        display: none;
+                    }
+                    .kutuOzellikFiltre{
+                        .kutuBodyOzellikFiltre{
+                            #dvUrunKiyaslamaOzellik{
+                                border-bottom: 1px solid #eeeeee;
+                                .urunKiyaslamaOzellik_ozellikAd{
+                                    padding: 21px;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: $colorPink;
+                                    font-family: $fontDefaultBold;
+                                    position: relative;
+                                    &:before,
+                                    &:after{
+                                        content:'';
+                                        display: block;
+                                        width: 12px;
+                                        height: 2px;
+                                        background: $colorDefault;
+                                        position: absolute;
+                                        right: 40px;
+                                        top: 28px;
+                                        @include transition(all 0.3s ease-in-out);
+                                    }
+                                    &:before{
+                                        opacity: 1;
+                                        @include setTransform(rotate(0deg));
+                                    }
+                                    &.kapali:before{
+                                        @include setTransform(rotate(-90deg));
+                                        opacity: 1;
+                                    }
+                                    &.kapali ~ .urunKiyaslamaOzellik_ozellikIcerik{
+                                        max-height: 0;
+                                        overflow: hidden;
+                                    }
+                                }
+                                .urunKiyaslamaOzellik_ozellikIcerik{
+                                    margin-bottom: 0;
+                                    display: block !important;
+                                    max-height: 1000px;
+                                    @include transition(max-height 0.36s ease-in-out);
+                                    > table,
+                                    > table > tbody,
+                                    > table > tbody > tr,
+                                    > table > tbody > tr > td,
+                                    > table > tbody > tr > th{
+                                        display: block;
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                    > table{
+                                        tbody{
+                                            tr{
+                                                border-top: 1px solid #eeeeee;
+                                                    a{
+                                                        display: block;
+                                                        width: 100%;
+                                                        padding: 20px 10px 20px 45px;
+                                                        font-family: $fontDefaultBold;
+                                                        font-size: 18px;
+                                                        letter-spacing: 2px;
+                                                    }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }
+            @at-root .mobile-filter-ready{
+                overflow: hidden;
+                .left-bar{
+                    display: block;
+                }
+            }
+            @at-root .mobile-filter-animate{
+                .left-bar{
+                    @include setTransform(translateY(0)); 
+                }
+            }
+        }
+    }
+
+}

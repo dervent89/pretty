@@ -1,0 +1,353 @@
+.page-detail{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    .section-1{
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        border-bottom: 10px solid $colorDefault;
+        padding-bottom: 10px;
+        > .urunNavigasyon{
+            display: none;
+        }
+        .ems-prd-detail{
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            border-bottom: 10px solid $colorDefault;
+            direction: rtl;
+            .col-left{
+                width: 41.7%;
+                background: #eeeeee;
+                text-align: right;
+                display: table-cell;
+                vertical-align: top;
+                direction: ltr;
+                > .col-left-inner{
+                    text-align: left;
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 100%;
+                    max-width: 475px;
+                    padding: 45px 55px 30px 30px;
+                    .urunNavigasyon{
+                        margin-bottom: 60px;
+                    }
+                    .product-name{
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 30px;
+                        h1{
+                            font-family: $fontDefaultBold;
+                            font-size: 40px;
+                            line-height: 40px;
+                            letter-spacing: 3px;
+                        }
+                    }
+                    .product-description{
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 10px;
+                        font-family: $fontSite;
+                        font-size: 18px;
+                        color: $colorDefault;
+                    }
+                    .product-code{
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 100px;
+                        font-family: $fontSite;
+                        font-size: 15px;
+                        color: #848484;
+                        .lbl{
+                            margin-right: 5px;
+                        }
+                    }
+                    .product-share{
+                        margin-bottom: 80px;
+                        display: inline-block;
+                        vertical-align: top;
+                        .share-wrap{
+                            position: relative;
+                            > a{
+                                display: inline-block;
+                                vertical-align: top;
+                                border-bottom:3px solid $colorDefault;
+                                padding: 2px 0;
+                                font-family: $fontSiteBold;
+                                font-size: 18px;
+                                position: relative;
+                                &:after{
+                                    content:$icon-arrow-caret-down;
+                                    @extend .icon;
+                                    @extend .animated;
+                                    position: absolute;
+                                    @include setTransform(translateX(-50%));
+                                    bottom: -13px;
+                                    left: 50%;
+                                    font-size: 12px;
+                                    display: none;
+                                    @include transition(all 0.2s ease-in-out);
+                                }
+                            }
+                            > .share-holder{
+                                position: absolute;
+                                bottom: -45px;
+                                left: 13px;
+                                width: 150px;
+                                display: none;
+                                @extend .animated;
+                                @extend .flipInX;
+                                vertical-align: top;
+                                > ul{
+                                    display: inline-block;
+                                    vertical-align: top;
+                                    li{
+                                        display: inline-block;
+                                        padding-right: 10px;
+                                        a{
+                                            padding: 7px 7px;
+                                        }
+                                    }
+                                }
+                            }
+                            &.opened{
+                                > a {
+                                    &:after{
+                                        display: block;
+                                    }
+                                }
+                                > .share-holder{
+                                    display: block;
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                @media screen and (max-width: $deviceMobile){
+                    width: 100%;
+                    display: block;
+                    background: none;
+                    .col-left-inner{
+                        max-width: none;
+                        padding: 30px 30px 30px 30px;
+                        .urunNavigasyon{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .col-right{
+                direction: ltr;
+                width: 58.3%;
+                display: table-cell;
+                vertical-align: top;
+                .product-detail-slider-wrapper .swiper-wrapper > .swiper-slide,
+                .product-detail-slider-wrapper .swiper-wrapper,
+                .product-detail-slider-wrapper,
+                .product-detail-slider,
+                .ems-prd-zoom{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                        .ems-prd-icons{
+                            display: none;
+                        }
+                }
+                .ems-prd-color-list{
+                    .UrunListeGrup_listeUrunDetayGrup{
+                        display: none;
+                            &.plugins-active{
+                                display: block;
+                            }
+                            .listeUrunDetayGrup_listeBaslik{
+                                display: none;
+                            }
+                            width: 100%;
+                            position: relative;
+                            overflow: hidden;
+                                ul{
+                                    position: relative;
+                                        & > li{
+                                            display: inline-block;
+                                            vertical-align: top;
+                                                .prdName,
+                                                .URN_AD{
+                                                    display: none;
+                                                }
+                                        }
+                                }
+                        }
+                    
+                }
+                .product-detail-slider-wrapper .swiper-wrapper > .swiper-slide{
+                    a{ 
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        overflow: hidden;
+                        padding: 0.5px;
+                        position: relative;
+                            img{
+                                height: 100%;
+                                width: auto;
+                                display: block;
+                                max-width: none;
+                                margin: 0 auto;
+                                border: none;
+                                outline:none;
+                                    &.color-palatte-img{
+                                        position: absolute !important;
+                                        left: 50%;
+                                        top: 50%;
+                                        @include setTransform(translate(-50%,-50%));
+                                    }
+                            }
+                    }
+                }
+                .swiper-pagination{display: none;}
+                .swiper-button-next{right: 50px;}
+                .swiper-button-prev{left: 50px;}
+                .ems-prd-grup-wrapper{
+                    .prd-list-group{
+                        display: none;
+                    }
+                }
+                .color-palette-wrp{
+                    display: block !important;
+                    width: 100%;
+                    margin: 30px auto 30px auto;
+                    text-align: center;
+                    overflow: hidden;
+                    .color-palette{
+                        height:90px;
+                        width:100%;
+                        max-width: 580px;
+                        position:relative;
+                        margin: 0 auto;
+                        ul{
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            li{
+                                background-position:center center;
+                                background-repeat:no-repeat;
+                                background-size: 110% 110%;
+                                -webkit-transition: width 111ms ease-in-out, height 111ms ease-in-out;
+                                -moz-transition: width 111ms ease-in-out, height 111ms ease-in-out;
+                                -o-transition: width 111ms ease-in-out, height 111ms ease-in-out;
+                                transition: width 111ms ease-in-out, height 111ms ease-in-out;
+                                height:60px;
+                                background: none !important;
+                                &.selected a,
+                                &:hover a{
+                                    .prd-color{
+                                        border-color: $colorDefault;   
+                                    }
+                                }
+                                .text{
+                                    display: none;
+                                }
+                                a {
+                                    display: block;
+                                    position: absolute;
+                                    width: 100%;
+                                    max-width: 60px;
+                                    max-height: 60px;
+                                    height: 100%;
+                                    left: 50%;
+                                    margin-left: -30px;
+                                    top: 0;
+                                    .prd-color{
+                                        display: block;
+                                        width: 60px;
+                                        height: 60px;
+                                        border-radius: 50%;
+                                        border-width: 5px;
+                                        border-style: solid;
+                                        border-color: transparent;
+                                        overflow: hidden;
+                                        background-position: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }               
+                @media screen and (max-width: $deviceMobile){
+                    width: 100%;
+                    display: block;
+                    .prdDetail-slider-btns{
+                        display: none !important;
+                    }
+                    .prd-list-group{
+                        display: block !important;
+                        width: 100%;
+                        background: #eeeeee;
+                        height: 70px;
+                        padding: 20px 25px;
+                        margin-bottom: 40px; 
+                    }
+                    .color-palette-wrp{
+                        margin: 0;
+                        padding: 0 25px;
+                        .color-palette{
+                            overflow: visible;
+                            height: auto;
+                            max-width: none;
+                            ul{
+                                position: static !important;
+                                transform: none !important;
+                                width: 100% !important;
+                                display: inline-block;
+                                vertical-align: top;
+                                li{
+                                    float: left;
+                                    width: 50px;
+                                    height: 50px;
+                                    margin: 5px;
+                                    a{
+                                        width: 50px;
+                                        height: 50px;
+                                        .prd-color{
+                                            width: 50px;
+                                            height: 50px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .section-2{
+        padding: 65px 0 120px 0;
+    }
+}
+#sonGezilen{
+    .ems-prd-bottom-banner,
+    .ems-prd-top-banner{display: none;} 
+    .sonGezilen_header{
+        margin-bottom: 40px;
+        > span{
+            font-family: $fontDefaultBold;
+            font-size: 30px;
+            line-height: 30px;
+            letter-spacing: 3.2px;
+            color: $colorDefault;
+        }
+    }
+    .ems-prd-list{
+        margin: 0;
+        > ul{
+            > .ems-prd{
+                
+            }
+        }
+    }
+}

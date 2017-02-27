@@ -23,7 +23,6 @@
             border-radius: 25px;
             height: 50px;
             padding: 0 0;
-            overflow: hidden;
             z-index: -1;
             @include transition(all 0.3s ease-in-out);
             backface-visibility: hidden;
@@ -35,6 +34,7 @@
                 display: block !important;
             }
             .btn.btn-search-text-remove{
+                display: none;
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -48,6 +48,7 @@
                 @include setTransform(translateX(100%));
                 .search-keyup &{
                     @include setTransform(translateX(0));
+                    display: block;
                 }
             }
             .btnArama{
@@ -68,7 +69,6 @@
                 }
             }
             .kutuArama_aramaText{
-                position: relative;
                 width: 100%;
                 input{
                     display: block;
@@ -97,6 +97,112 @@
         }
         .kutuFooterArama{
             display: none;
+        }
+    }
+}
+#search_suggest{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50px;
+    left: 0;
+    padding: 30px;
+    right: 0;
+    background: #eeeeee !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    @extend .fadeIn;
+    z-index: -1 !important;
+    &:before {
+        content: '';
+        display: block;
+        background: #eee;
+        width: 100%;
+        height: 25px;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        z-index: -1;
+    }
+    &:after {
+        content: '';
+        display: block;
+        background: #000;
+        width: 100%;
+        height: 25px;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        z-index: -1;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+    .searchSuggestDivHolder{
+        & > div{
+            text-align: left;
+            h3{
+                display: none;
+            }
+            .sHolder{
+                position: relative;
+            }
+            &.prd{
+                .sHolder{
+                    overflow: hidden;
+                    max-height: 360px;
+                    > div{
+                        > table{
+                            width: 100%;
+                            > tbody{
+                                > tr{
+                                    margin-bottom: 20px;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    > th{
+                                        position: relative;
+                                        width: 70px;
+                                        height: 70px;
+                                        background: $colorWhite;
+                                        text-align: center;
+                                        img{
+                                            width: auto;
+                                            height: 100%;
+                                        }
+                                    }
+                                    > td{
+                                        padding-left: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.cat{
+                margin-top: 50px;
+                .sHolder{
+                    > div{
+                        > a{
+                            font-family: $fontDefaultBold;
+                            font-size: 18px;
+                            letter-spacing: 2px;
+                            line-height: 35px;
+                            color: $colorDefault;
+                            display: inline-block;
+                            &:before{
+                                content:$icon-arrow-caret-right;
+                                @extend .icon;
+                                margin-right: 10px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -145,6 +251,37 @@
                         line-height: 40px;
                     }
                 }
+                .kutuArama_lbfkutuArama2{
+                    display: inline-block !important;
+                    vertical-align: top;
+                    .search-result-box{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 200px;
+                        height: auto;
+                        margin-bottom: 30px;
+                        position: fixed;
+                        z-index: 999;
+                        text-align: center;
+                        left: 50%;
+                        top: 20%;
+                        @include setTransform(translateX(-50%));
+                        i{
+                            display:inline-block;
+                            vertical-align: top;
+                            width: 77px;
+                            height: 77px;
+                            background: url(#{$baseHref + "/images/frontend/search-colors.svg"}) no-repeat center center;
+                        }
+                        span{
+                            font-family: $fontSite;
+                            font-size: 18px;
+                            color: #848484;
+                            display: block;
+                            margin-top: 30px;
+                        }
+                    }
+                }
                 .btn.btn-search-text-remove {
                     width: 40px;
                     height: 40px;
@@ -162,6 +299,37 @@
                     width: initial;
                     max-width: 100%;
                 }
+            }
+        }
+    }
+    #search_suggest{
+        position: fixed !important;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: #eeeeee !important;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        z-index: 19901 !important;
+        &:before,
+        &:after {
+            display: none;
+        }
+       
+    }
+    .search-ready{
+        overflow: hidden;
+        .search-wrp .kutuArama .kutuBodyArama .kutuArama_aramaText{
+            &:after{
+                content:'';
+                background: #eeeeee;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                display: block;
             }
         }
     }

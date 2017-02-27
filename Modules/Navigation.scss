@@ -1,0 +1,33 @@
+.olNavigasyon{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size:0;
+    > li{
+        display: inline-block;
+        vertical-align: top;
+        &:after{
+            content:'/';
+            display: inline-block;
+            vertical-align: top;
+            font-size: 15px;
+            color:#848484;
+            margin: 0 8px;
+            font-family: $fontSite;
+        }
+        &:last-child{
+            &:after{
+                display: none;
+            }
+        }
+        > a {
+            font-family: $fontSite;
+            font-size:15px;
+            color: #848484;
+        }
+    }
+    @media screen and (max-width: $deviceMobile){
+        display: none;
+    }
+}

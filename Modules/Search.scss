@@ -2,7 +2,8 @@
 .search-wrp{
     display: inline-block;
     vertical-align: top;
-    .kutuArama{
+}
+.kutuArama{
         .kutuHeaderArama{
             .btn.btn-search{
                 padding: 0;
@@ -99,7 +100,6 @@
             display: none;
         }
     }
-}
 #search_suggest{
     position: absolute;
     width: 100%;
@@ -252,8 +252,12 @@
                     }
                 }
                 .kutuArama_lbfkutuArama2{
-                    display: inline-block !important;
                     vertical-align: top;
+                    @at-root .search-ready{
+                        .kutuArama_lbfkutuArama2{
+                            display: inline-block !important;
+                        }
+                    }
                     .search-result-box{
                         display: inline-block;
                         vertical-align: top;

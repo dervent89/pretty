@@ -405,6 +405,86 @@
             }
     }
 }
+#container404{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 42px);
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .left-colm{
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 588px;
+        height: calc(100vh - 42px);
+        min-height: 600px;
+        background: #fff;
+        padding: 130px 82px;
+        .logo{
+            width: 100%;
+            max-width: 140px;
+            margin-bottom: 100px;
+        }
+        h1{
+            font-size: 98px;
+            letter-spacing: -0.6px;
+            color: $colorDefault;
+            font-family: $fontSiteBold;
+            line-height: 1;
+            margin-bottom: 20px !important;
+        }
+        p{
+            font-size: 33px;
+            font-family: $fontSite;
+            line-height: 1.2;
+        } 
+        a{
+            background: none;
+            font-size: inherit;
+            color: inherit;
+            font-family: $fontSiteBold;
+            font-size: 20px;
+            padding: 0 0 5px 0;
+            position: relative;
+            border: none;
+            &:after{
+                background: $colorDefault;
+                content:'';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                bottom: -3px;
+                right: 0;
+                @include transition(all 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860));
+            }
+            &:before{
+                background: $colorDefault;
+                content:'';
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 3px;
+                bottom: -3px;
+                left: -5px;
+                @include transition(all 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860));
+            }
+            &:hover{
+                border: none;
+                &:after{
+                    width: 0%;
+                    right: -5px;
+                }
+                &:before{
+                    width: 100%;
+                    left: -3px;
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width:$deviceMobile){
     .system-banner{

@@ -338,3 +338,69 @@
         }
     }
 }
+
+/*
+ * page-search
+ */
+
+.pageArama {}
+
+div[id$='urun_validatingForm'] {
+    display: none;
+    table {
+        width: 100%;
+        text-align: left;
+        table-layout: fixed;
+        td { padding: 10px 0px; }
+    }
+    select,
+    input[type='text']{
+        width: 100% !important;
+        height: 40px;
+        padding: 0px 10px;
+        border: 1px solid $grey;
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &::-ms-expand { display: none; }
+    }
+    .tableArama_tddrpMRK_AD {
+        position: relative;
+        &::after {
+            content: $icon-arrow-caret-down;
+            font-family: 'icomoon' !important;
+            position: absolute;
+            right: 15px;
+            top: calc(50% - 7px);
+            color: $grey;
+        }
+    }
+    input[type='checkbox']{
+        opacity: 0;
+        width: 15px;
+        height: 15px;
+        + span {
+            position: relative;
+            padding-left: 12px;
+            &::before {
+                content: '';
+                background-color: $grey;
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+                position: absolute;
+                left: -12px;
+                top: 3px;
+                z-index: -1;
+            }
+        }
+        &:checked + span::before { background-color: $colorPink; }
+    }
+    .btnAra,
+    .btnTemizle{
+        background-color: $grey;
+        &:hover { background-color: $colorPink; }
+    }
+}

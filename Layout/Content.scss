@@ -293,8 +293,8 @@
                 &:nth-of-type(odd){
                     direction: rtl;
                     .text-wrap{
-                        left: 0;
-                        right: initial;
+                        left: 0; 
+                        right: auto;
                         padding: 60px 34% 30px 40px;
                         @media screen and (max-width: $deviceMobile){
                             top: initial;

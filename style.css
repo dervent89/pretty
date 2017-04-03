@@ -5510,7 +5510,7 @@ div[id$='urun_validatingForm'] {
       direction: rtl; }
       .page-corporate-body ul.page-coporate-list li.item.typeImgText:nth-of-type(odd) .text-wrap {
         left: 0;
-        right: initial;
+        right: auto;
         padding: 60px 34% 30px 40px; }
         @media screen and (max-width: 960px) {
           .page-corporate-body ul.page-coporate-list li.item.typeImgText:nth-of-type(odd) .text-wrap {

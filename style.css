@@ -1,11 +1,11 @@
 @charset "UTF-8";
 .gradient, html:after, html:before {
-  background-color: black;
-  background-image: -moz-repeating-linear-gradient(-90deg, transparent, transparent 25px, white 25px, white 50px);
-  background-image: -webkit-repeating-linear-gradient(-90deg, transparent, transparent 25px, white 25px, white 50px);
-  background-image: -o-repeating-linear-gradient(-90deg, transparent, transparent 25px, white 25px, white 50px);
-  background-image: -ms-repeating-linear-gradient(-90deg, transparent, transparent 25px, white 25px, white 50px);
-  background-image: repeating-linear-gradient(-90deg, transparent, transparent 25px, white 25px, white 50px); }
+  background-color: white;
+  background-image: -moz-repeating-linear-gradient(-90deg, transparent, transparent 24px, black 24px, black 45px);
+  background-image: -webkit-repeating-linear-gradient(-90deg, transparent, transparent 24px, black 24px, black 45px);
+  background-image: -o-repeating-linear-gradient(-90deg, transparent, transparent 24px, black 24px, black 45px);
+  background-image: -ms-repeating-linear-gradient(-90deg, transparent, transparent 24px, black 24px, black 45px);
+  background-image: repeating-linear-gradient(-90deg, transparent, transparent 24px, black 24px, black 45px); }
 
 .bg-red {
   background: #d83f4d; }
@@ -5747,6 +5747,31 @@ div[id$='urun_validatingForm'] {
     .ems-filter-btn i {
       float: right;
       margin-left: 10px; } }
+
+.language-wrapper {
+  position: absolute;
+  right: 0;
+  top: -42px;
+  background: #fff;
+  height: 42px;
+  width: 90px;
+  display: inline-block;
+  vertical-align: top; }
+  .language-wrapper > a {
+    display: block;
+    width: 50%;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+    font-size: 14px;
+    color: #fff;
+    font-family: "karlaBold";
+    background: #000;
+    float: left; }
+    .en-US .lang-en {
+      background: #e8b6b8; }
+    .tr-TR .lang-tr {
+      background: #e8b6b8; }
 
 .system-banner {
   margin-bottom: 30px; }

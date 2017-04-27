@@ -39,12 +39,12 @@ $singleOuter: 1.6rem;
 
 // Speacial Variables
 .gradient{
-    background-color: black;
-    background-image: -moz-repeating-linear-gradient(-90deg, transparent, transparent 25px, rgba(255,255,255,1) 25px, rgba(255,255,255,1) 50px);
-    background-image: -webkit-repeating-linear-gradient(-90deg, transparent, transparent 25px, rgba(255,255,255,1) 25px, rgba(255,255,255,1) 50px);
-    background-image: -o-repeating-linear-gradient(-90deg, transparent, transparent 25px, rgba(255,255,255,1) 25px, rgba(255,255,255,1) 50px);
-    background-image: -ms-repeating-linear-gradient(-90deg, transparent, transparent 25px, rgba(255,255,255,1) 25px, rgba(255,255,255,1) 50px);
-    background-image: repeating-linear-gradient(-90deg, transparent, transparent 25px, rgba(255,255,255,1) 25px, rgba(255,255,255,1) 50px);
+    background-color: white;
+    background-image: -moz-repeating-linear-gradient(-90deg, transparent, transparent 24px, rgba(0,0,0,1) 24px, rgba(0,0,0,1) 45px);
+    background-image: -webkit-repeating-linear-gradient(-90deg, transparent, transparent 24px, rgba(0,0,0,1) 24px, rgba(0,0,0,1) 45px);
+    background-image: -o-repeating-linear-gradient(-90deg, transparent, transparent 24px, rgba(0,0,0,1) 24px, rgba(0,0,0,1) 45px);
+    background-image: -ms-repeating-linear-gradient(-90deg, transparent, transparent 24px, rgba(0,0,0,1) 24px, rgba(0,0,0,1) 45px);
+    background-image: repeating-linear-gradient(-90deg, transparent, transparent 24px, rgba(0,0,0,1) 24px, rgba(0,0,0,1) 45px);
 }
 .bg{
     &-red{background: $colorRed;}
